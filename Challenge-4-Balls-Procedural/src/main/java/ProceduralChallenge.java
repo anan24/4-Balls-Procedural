@@ -6,10 +6,11 @@ public class ProceduralChallenge extends PApplet{
     public static final int HEIGHT = 488;
     public static final int DIAMETER = 10;
 
-    int x = 0;
+    int ball1Pos = 0;
+    int ball2Pos = 0;
+    int ball3Pos = 0;
+    int ball4Pos = 0;
     int y = 0;
-
-    int initialSpeed = 1;
 
     public static void main(String[] args) {
         PApplet.main("ProceduralChallenge",args);
@@ -23,26 +24,23 @@ public class ProceduralChallenge extends PApplet{
 
     @Override
     public void setup() {
-//        super.setup();
-//        ellipse(WIDTH/2,HEIGHT/2,100,100);
+        super.setup();
     }
 
     @Override
     public void draw() {
-//        super.draw();
-//        paintBackground(); //as soon as you move the mouse the backgruond is coloured white and the other ellipses disappear
-
-        drawEllipse(1);
-        drawEllipse(2);
-        drawEllipse(3);
-        drawEllipse(4);
+        drawEllipse();
     }
 
-    private void drawEllipse(int ballNo) {
-//        ellipse(mouseX,mouseY, DIAMETER, DIAMETER);
-        y = (ballNo*HEIGHT)/5;
-        ellipse(x*ballNo,y, DIAMETER, DIAMETER);
-        x++;
+    private void drawEllipse() {
+        ellipse(ball1Pos,1*HEIGHT/5, DIAMETER, DIAMETER);
+        ball1Pos++;
+        ellipse(ball2Pos,2*HEIGHT/5, DIAMETER, DIAMETER);
+        ball2Pos+=2;
+        ellipse(ball3Pos,3*HEIGHT/5, DIAMETER, DIAMETER);
+        ball3Pos+=3;
+        ellipse(ball4Pos,4*HEIGHT/5, DIAMETER, DIAMETER);
+        ball4Pos+=4;
     }
 
     private void paintBackground() {
